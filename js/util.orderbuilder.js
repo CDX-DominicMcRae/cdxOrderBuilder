@@ -279,6 +279,21 @@ function getOrderNumber() {
     order.orderNumber = Math.floor(Math.random() * (9999999 - 1000000) + 1000000) + 70000000;
 }
 
+// To implement
+function setEnvironment(value) {
+    if (value = 1) {
+        envURL = 'http://ZAKLPEVMDE062.progressive.co.nz/ods.api/api/online/orders';
+    }
+    if (value = 2) {
+        envURL = 'http://ods-uat.progressive.co.nz/ods.api/api/online/orders';
+    }
+}
+
+// To implement
+function setFulfilmentMethod(value) {
+    order.delivery.method = value;
+}
+
 function stageOrderJSON() {
     order.prefix = document.getElementById("inputOrderPrefix").value;
     order.createDateTime = getDateTime();
@@ -290,7 +305,8 @@ function stageOrderJSON() {
     order.onlineStoreId = document.getElementById("inputStore").value;
 
     // To implement
-    // setEnvironment(document.getElementById(""))
+    // setEnvironment(document.getElementById(""));
+    // setFulfilmentMethod(document.getElementById(""));
     orderCount = document.getElementById("inputNumberOfOrders").value;
     buildOrderJSON();
 }
@@ -300,16 +316,6 @@ function buildOrderJSON() {
         getOrderNumber();
         console.log(JSON.stringify(order));
         postOrder();
-    }
-}
-
-// To implement
-function setEnvironment(value) {
-    if (value = 1) {
-        envURL = 'http://ZAKLPEVMDE062.progressive.co.nz/ods.api/api/online/orders';
-    }
-    if (value = 2) {
-        envURL = 'http://ods-uat.progressive.co.nz/ods.api/api/online/orders';
     }
 }
 
