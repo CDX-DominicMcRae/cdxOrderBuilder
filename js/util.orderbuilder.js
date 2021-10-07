@@ -51,6 +51,7 @@ function getDateTime() {
 let currentDateTime = new Date();
 let orderCount = 1;
 let articleCount = 1;
+let envURL = '';
 
 let order = {
     orderNumber: 70000000,
@@ -288,6 +289,8 @@ function stageOrderJSON() {
     order.delivery.method = document.getElementById("inputDeliveryMethod").value;
     order.onlineStoreId = document.getElementById("inputStore").value;
 
+    // To implement
+    // setEnvironment(document.getElementById(""))
     orderCount = document.getElementById("inputNumberOfOrders").value;
     buildOrderJSON();
 }
@@ -297,6 +300,16 @@ function buildOrderJSON() {
         getOrderNumber();
         console.log(JSON.stringify(order));
         postOrder();
+    }
+}
+
+// To implement
+function setEnvironment(value) {
+    if (value = 1) {
+        envURL = 'http://ZAKLPEVMDE062.progressive.co.nz/ods.api/api/online/orders';
+    }
+    if (value = 2) {
+        envURL = 'http://ods-uat.progressive.co.nz/ods.api/api/online/orders';
     }
 }
 
