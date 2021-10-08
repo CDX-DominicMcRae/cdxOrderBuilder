@@ -336,7 +336,7 @@ function postOrder() {
         // },
         mode: 'no-cors',
         headers: {
-            Authorization: '293c6355-5753-43b8-ab96-c2c2bbe7bfc5',
+            Authorization: '',
             'Content-Type': 'application/json',
             Accept: '*/*',
             Host: 'ods-uat.progressive.co.nz',
